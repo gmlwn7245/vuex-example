@@ -1,0 +1,55 @@
+Vuex
+
+1. Vuex 란?
+- Vue.js의 상태 관리를 위한 패턴이자 라이브러리
+- 다른 상태 관리 패턴이나 라이브러리와 비교했을 때 뷰 반응성 체계를 효율적으로 활용하여 화면을 업데이트 함.
+
+* 뷰 반응성(Vue Reactivity) : 뷰가 데이터 변화를 감지했을 때 자동으로 화면을 다시 갱신하는 특성
+
+2. Vuex 필요성
+- 컴포넌트 기반 프레임워크에서는 작은 단위로 쪼개진 여러 개의 컴포넌트 화면을 구성
+  ( ex - header, button, list 등의 화면 요소가 각 컴포넌트로 구성, 한 화면에서 많은 컴포넌트를 사용함)
+- 이에 따라 컴포넌트 간의 통신이나 데이터 전달을 좀 더 유기적으로 관리할 필요성이 생김
+- vue.js는 데이터 통신을 할 때, 상-하위 관계가 아니면 데이터 통신이 어려운데, vuex는 데이터를 store.js라는 한 곳에 모아서 꺼내 쓰게 하여, 컴포넌트 간 통신이나 데이터 전달을 좀 더 편하게 관리해준다.
+
+3. 상태 관리
+- 상태 관리란 여러 컴포넌트 간의 데이터 전달과 이벤트 통신을 한 곳에서 관리하는 패턴을 의미
+- 리엑트 : Redux, Mobx와 같은 상태 관리 라이브러리 사용 / 뷰 : Vuex라는 상태 관리 라이브러리 사용
+
+- 상태 관리가 필요한 경우
+  ① 뷰의 컴포넌트 통신 방식인 props, event emit 때문에 중간에 거쳐야 할 컴포넌트가 많아진 경우
+  ② 이를 피하기 위해 Event Bus를 사용하여 컴포넌트 간 데이터 흐름을 파악하기 어려운 경우
+
+4. 상태 관리 패턴
+- 상태관리 구성요소
+  ① state : 컴포넌트 간에 공유할 data
+  ② view : 데이터가 표현될 template
+  ③ actions : 사용자의 입력에 따라 반응할 methods
+
+설치 : npm install vuex
+
+5. Getters
+- 여러 컴포넌트에서 같은 로직을 비효율적으로 중복 사용하고 있을 경우 getters로 정의하여 호출하도록 함.
+
+
+
+6. Mutataions
+- Mutations란 Vuex의 데이터, 즉 state 값을 변경하는 로직들을 의미한다. 
+- Getters와 차이점 : 인자를 받아 Vuex에 넘겨줄 수 있고, computed가 아닌 methods에 등록
+- Actions와 차이점 : Mutations는 동기적 로직을 정의 / Actions는 비동기적 로직을 정의
+
+* Mutations의 성격상 안에 정의한 로직들이 순차적으로 일어나야 각 컴포넌트의 반영 여부를 제대로 추적할 수 있음. 
+
+7. Actions
+- Mutations의 역할이 State 관리에 주안점을 두고 있기 때문에 여러 개의 컴포넌트에서 변경을 요청했을 때. 그 변경순서를 파악하기 어려움
+- 따라서 setTimeout() 이나 서버와의 http 통신 처리와 같이 결과를 받아올 타이밍이 예측되지 않은 로직은 Actions에 선언
+
+8.Vuex Helper
+① mapGetters
+- Vuex에 내장된 helper 함수
+- mapGetters로 이미 위에서 한 번 가독성이 올라간 코드를 더 직관적이게 작성할 수 있음
+- 이 방법은 컴포넌트 자체에서 사용할 computed 속성과 함께 사용할 수 없기 때문에 ES6의 문법 "..."을 사용
+② mapMutations
+- mapGetters와 마찬가지로, Vuex에 내장된 mapMutations를 이용하여 코드 가독성을 높일 수 있음
+
+참고 자료 : https://joshua1988.github.io/web-development/vuejs/vuex-start/#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0
