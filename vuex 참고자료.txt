@@ -31,9 +31,7 @@ Vuex
 5. Getters
 - 여러 컴포넌트에서 같은 로직을 비효율적으로 중복 사용하고 있을 경우 getters로 정의하여 호출하도록 함.
 
-
-
-6. Mutataions
+6. Mutations
 - Mutations란 Vuex의 데이터, 즉 state 값을 변경하는 로직들을 의미한다. 
 - Getters와 차이점 : 인자를 받아 Vuex에 넘겨줄 수 있고, computed가 아닌 methods에 등록
 - Actions와 차이점 : Mutations는 동기적 로직을 정의 / Actions는 비동기적 로직을 정의
@@ -44,7 +42,7 @@ Vuex
 - Mutations의 역할이 State 관리에 주안점을 두고 있기 때문에 여러 개의 컴포넌트에서 변경을 요청했을 때. 그 변경순서를 파악하기 어려움
 - 따라서 setTimeout() 이나 서버와의 http 통신 처리와 같이 결과를 받아올 타이밍이 예측되지 않은 로직은 Actions에 선언
 
-8.Vuex Helper
+8. Vuex Helper
 ① mapGetters
 - Vuex에 내장된 helper 함수
 - mapGetters로 이미 위에서 한 번 가독성이 올라간 코드를 더 직관적이게 작성할 수 있음
@@ -52,4 +50,9 @@ Vuex
 ② mapMutations
 - mapGetters와 마찬가지로, Vuex에 내장된 mapMutations를 이용하여 코드 가독성을 높일 수 있음
 
+
 참고 자료 : https://joshua1988.github.io/web-development/vuejs/vuex-start/#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0
+
+vuex-test 들어가서 
+1. npm install --save vuex
+2. npm run serve (8080 포트 연결)

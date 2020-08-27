@@ -3,8 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex); // vue에 vuex등록
 
-export const store = new Vuex.Store({
-    state: {
+export const store = new Vuex.Store({ 
+    state: { //counter state 추가
         counter: 0
     },
     getters: {
